@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { SyntheticEvent, useState } from 'react'
 
-const addManga = () => {
+const AddManga = () => {
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
     const [desc, setDesc] = useState("")
@@ -12,7 +12,7 @@ const addManga = () => {
 
     const router =useRouter()
 
-    const addManga = async (e: SyntheticEvent) => {
+    const createManga = async (e: SyntheticEvent) => {
         e.preventDefault()
         await axios.post('api/manga', {
           title: title,
@@ -68,11 +68,11 @@ const addManga = () => {
                 value={chap}
                 onChange={(e) => setChap(e.target.value)}
             />
-            <button onClick={addManga}>Add Manga</button>
+            <button onClick={createManga}>Add Manga</button>
         </form>
       
     </div>
   )
 }
 
-export default addManga
+export default AddManga

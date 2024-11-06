@@ -11,7 +11,7 @@ type Manga = {
     chapters: number;
 }
 
-const deleteManga = ({manga}: {manga: Manga}) => {
+const DeleteManga = ({manga}: {manga: Manga}) => {
     const router =useRouter()
 
 
@@ -30,4 +30,4 @@ const deleteManga = ({manga}: {manga: Manga}) => {
   )
 }
 
-export default deleteManga
+export default DeleteManga
