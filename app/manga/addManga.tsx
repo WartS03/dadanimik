@@ -10,6 +10,7 @@ const AddManga = () => {
     const [image, setImge] = useState("")
     const [chap, setChap] = useState("")
 
+    
     const router =useRouter()
 
     const createManga = async (e: SyntheticEvent) => {
