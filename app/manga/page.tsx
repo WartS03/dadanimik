@@ -2,15 +2,8 @@
 import { PrismaClient } from '@prisma/client'
 import DeleteManga from './DeleteManga'
 import AddManga from './AddManga'
+import Image from 'next/image'
 
-interface Manga {
-  id: number
-  title: string
-  author: string
-  description: string
-  imageUrl: string
-  chapters: number
-}
 const prisma = new PrismaClient()
 
 const getMangas = async () => {
@@ -36,15 +29,18 @@ export default  async function Home() {
       <hr />
       <h1 className='p-2 bg-slate-500 text-white mb-4'>Manga List</h1>
       <ul className='flex'>
-        {mangas.map((manga, index) => (
+        {mangas.map((manga) => (
           <li className="p-2 bg-slate-500 mx-2 text-white"key={manga.id}>
             <h2>{manga.title}</h2>
             <p>{manga.description}</p>
             <p>Author: {manga.author}</p>
-            <img src={manga.imageUrl} alt={manga.title} width="100" />
+            <Image
+              src={manga.imageUrl}
+              width={500}
+              height={500}
+              alt={manga.title}
+            />
             <p>Chapters: {manga.chapters}</p>
-            {/* {/* <button onClick={() => router.push(`/manga/edit/${manga.id}`)}>Edit</button> */}
-            {/* <button onClick={() => handleDelete(manga.id)}>Delete</button> */} 
             <div>
               <DeleteManga manga={manga}/>
             </div>
