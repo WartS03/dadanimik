@@ -68,7 +68,7 @@ const AddManga = () => {
                 value={chap}
                 onChange={(e) => setChap(e.target.value)}
             />
-            <button onClick={createManga}>Add Manga</button>
+            <button  className=""onClick={createManga}>Add Manga</button>
         </form>
       
     </div>
