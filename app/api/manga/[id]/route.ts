@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
-    import type { Manga } from "@prisma/client";
+    // import type { Manga } from "@prisma/client";
 const prisma = new PrismaClient()
 
 export const DELETE = async (request: Request, {params}: {params: {id: string |string[] | undefined}})=>{
