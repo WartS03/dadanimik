@@ -1,7 +1,7 @@
 
 import { PrismaClient } from '@prisma/client'
 import DeleteManga from './DeleteManga'
-import AddManga from './AddManga'
+import AddManga from './addManga'
 
 interface Manga {
   id: number
